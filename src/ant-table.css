@@ -1,0 +1,4 @@
+.ant-table-thead > tr > th.barcode,
+.ant-table-tbody > tr > td.barcode {
+  width: 100px; /* Đặt chiều ngang mong muốn cho cột "Barcode" */
+}

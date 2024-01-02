@@ -207,7 +207,7 @@ const Config = (props) => {
       <Table
         dataSource={dataTable}
         columns={col}
-        pagination={{ pageSize: 5 }}
+        pagination={{ pageSize: 100 }}
       />
     </Card>
   ) : (

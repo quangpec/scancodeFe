@@ -36,7 +36,7 @@ const NhapHang = (props) => {
       const modifiedResponse = response.map((row) => {
         const filteredRow = Object.fromEntries(
           Object.entries(row).filter(
-            ([key]) => key !== "__v" && key !== "userId"
+            ([key]) => key !== "__v" && key !== "userId" && key !== "_id"
           )
         );
         return filteredRow;
@@ -215,7 +215,7 @@ const NhapHang = (props) => {
       <Table
         dataSource={dataTable}
         columns={col}
-        pagination={{ pageSize: 5 }}
+        pagination={{ pageSize: 100 }}
       />
     </Card>
   ) : (

@@ -7,6 +7,8 @@ import App2 from "../App2";
 import fileDownload from "js-file-download";
 import { DownloadOutlined, UploadOutlined } from "@ant-design/icons";
 import { public_api } from "../../env";
+import "../../ant-table.css";
+
 const KiemTra = (props) => {
   const history = useNavigate();
   const user = getUser();
@@ -36,7 +38,7 @@ const KiemTra = (props) => {
       const modifiedResponse = response.map((row) => {
         const filteredRow = Object.fromEntries(
           Object.entries(row).filter(
-            ([key]) => key !== "__v" && key !== "userId"
+            ([key]) => key !== "__v" && key !== "userId" && key !== "_id"
           )
         );
         return filteredRow;
@@ -46,6 +48,7 @@ const KiemTra = (props) => {
           title: key,
           dataIndex: key,
           key: key,
+          className: key === "barcode",
         };
       });
       setCol(col);
@@ -215,7 +218,7 @@ const KiemTra = (props) => {
       <Table
         dataSource={dataTable}
         columns={col}
-        pagination={{ pageSize: 5 }}
+        pagination={{ pageSize: 100 }}
       />
     </Card>
   ) : (
